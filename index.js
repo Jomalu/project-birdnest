@@ -40,7 +40,8 @@ setInterval(async () => {
     const xmlString = await response.text();
     const parser = new XMLParser({ ignoreAttributes: false });
     const result = parser.parse(xmlString);
-    if (result) {
+    
+    if (result.report) {
       // time of recording
       const time = result.report.capture["@_snapshotTimestamp"];
 
